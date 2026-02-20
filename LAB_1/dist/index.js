@@ -18,27 +18,29 @@ function convertDegreesToRadians(degrees) {
     return degrees * (Math.PI / 180);
 }
 function triangle(arg1, type1, arg2, type2) {
+    let goodRes = "success";
+    let badRes = "failed";
     if (typeof arg1 !== "number" || typeof arg2 !== "number") {
         console.log("Введені аргументи повинні бути числами.");
-        return console.log("failed");
+        return badRes;
     }
     const EPSILON = 1e-10;
     if (Math.abs(arg1) < EPSILON || Math.abs(arg2) < EPSILON) {
         console.log("Значення занадто малі для точних обчислень.");
-        return console.log("failed");
+        return badRes;
     }
     const MAX_VALUE = 1e10;
     if (Math.abs(arg1) > MAX_VALUE || Math.abs(arg2) > MAX_VALUE) {
         console.log("Значення занадто великі для точних обчислень.");
-        return console.log("failed");
+        return badRes;
     }
     if ((type1 === "leg" || type1 === "hypotenuse") && arg1 <= 0) {
         console.log("Сторони трикутника повинні бути додатними числами.");
-        return console.log("failed");
+        return badRes;
     }
     if ((type2 === "leg" || type2 === "hypotenuse") && arg2 <= 0) {
         console.log("Сторони трикутника повинні бути додатними числами.");
-        return console.log("failed");
+        return badRes;
     }
     let a, b, c, alpha, beta;
     let alphaRad, betaRad;
@@ -56,7 +58,7 @@ function triangle(arg1, type1, arg2, type2) {
         c = arg2;
         if (a >= c) {
             console.log("Катет не може бути більшим або рівним гіпотенузі");
-            return console.log("failed");
+            return badRes;
         }
         b = Math.sqrt(Math.pow(c, 2) - Math.pow(a, 2));
         alphaRad = Math.asin(a / c);
@@ -69,7 +71,7 @@ function triangle(arg1, type1, arg2, type2) {
         a = arg2;
         if (a >= c) {
             console.log("Катет не може бути більшим або рівним гіпотенузі");
-            return console.log("failed");
+            return badRes;
         }
         b = Math.sqrt(Math.pow(c, 2) - Math.pow(a, 2));
         alphaRad = Math.asin(a / c);
@@ -82,7 +84,7 @@ function triangle(arg1, type1, arg2, type2) {
         alpha = arg2;
         if (alpha <= 0 || alpha >= 90) {
             console.log("Прилеглий кут повинен бути більше 0 і менше 90 градусів.");
-            return console.log("failed");
+            return badRes;
         }
         alphaRad = convertDegreesToRadians(alpha);
         beta = 90 - alpha;
@@ -94,7 +96,7 @@ function triangle(arg1, type1, arg2, type2) {
         b = arg2;
         if (alpha <= 0 || alpha >= 90) {
             console.log("Прилеглий кут повинен бути більше 0 і менше 90 градусів.");
-            return console.log("failed");
+            return badRes;
         }
         alphaRad = convertDegreesToRadians(alpha);
         beta = 90 - alpha;
@@ -106,7 +108,7 @@ function triangle(arg1, type1, arg2, type2) {
         alpha = arg2;
         if (alpha <= 0 || alpha >= 90) {
             console.log("Протилежний кут повинен бути більше 0 і менше 90 градусів.");
-            return console.log("failed");
+            return badRes;
         }
         alphaRad = convertDegreesToRadians(alpha);
         beta = 90 - alpha;
@@ -118,7 +120,7 @@ function triangle(arg1, type1, arg2, type2) {
         a = arg2;
         if (alpha <= 0 || alpha >= 90) {
             console.log("Протилежний кут повинен бути більше 0 і менше 90 градусів.");
-            return console.log("failed");
+            return badRes;
         }
         alphaRad = convertDegreesToRadians(alpha);
         beta = 90 - alpha;
@@ -130,7 +132,7 @@ function triangle(arg1, type1, arg2, type2) {
         alpha = arg2;
         if (alpha <= 0 || alpha >= 90) {
             console.log("Кут повинен бути більше 0 і менше 90 градусів.");
-            return console.log("failed");
+            return badRes;
         }
         alphaRad = convertDegreesToRadians(alpha);
         beta = 90 - alpha;
@@ -142,7 +144,7 @@ function triangle(arg1, type1, arg2, type2) {
         c = arg2;
         if (alpha <= 0 || alpha >= 90) {
             console.log("Кут повинен бути більше 0 і менше 90 градусів.");
-            return console.log("failed");
+            return badRes;
         }
         alphaRad = convertDegreesToRadians(alpha);
         beta = 90 - alpha;
@@ -152,11 +154,11 @@ function triangle(arg1, type1, arg2, type2) {
     else {
         console.log("Непідтримувана комбінація типів: " + type1 + " і " + type2);
         console.log("Перечитайте інструкцію і перевірте правильність введення даних.");
-        return console.log("failed");
+        return badRes;
     }
     if (alpha >= 90 || beta >= 90) {
         console.log("Кут не може бути тупим (повинен бути < 90°). Введіть коректні дані.");
-        return console.log("failed");
+        return badRes;
     }
     console.log("Результати: ");
     console.log("a = " + a);
@@ -164,7 +166,7 @@ function triangle(arg1, type1, arg2, type2) {
     console.log("c = " + c);
     console.log("alpha = " + alpha);
     console.log("beta = " + beta);
-    return console.log("success");
+    return goodRes;
 }
 // Приклади виклику функції
 triangle(3, "leg", 4, "leg");
@@ -202,11 +204,12 @@ triangle(43.13, "angle", -2, "hypotenuse");
 // console.log("\nТест 8: Рівнобедрений трикутник (7-7)");
 // triangle(7, "leg", 7, "leg"); // Гіпотенуза повинна бути 7√2 ≈ 9.9
 // 9. Тест, коли вводиться гіпотенуза та гострий кут (перевірка обчислення катетів)
-console.log("\nТест 9: Гіпотенуза 13, кут 30°");
-triangle(13, "hypotenuse", 30, "angle"); // Катети повинні бути 6.5 та 11.26
-// 10. Тест на нульові або від’ємні значення (повинно вивести помилку)
-console.log("\nТест 10: Нульове або від'ємне значення");
-triangle(-5, "leg", 10, "leg"); // Помилка
-triangle(0, "leg", 10, "leg"); // Помилка
+// console.log("\nТест 9: Гіпотенуза 13, кут 30°");
+// triangle(13, "hypotenuse", 30, "angle"); // Катети повинні бути 6.5 та 11.26
+// // 10. Тест на нульові або від’ємні значення (повинно вивести помилку)
+// console.log("\nТест 10: Нульове або від'ємне значення");
+// triangle(-5, "leg", 10, "leg"); // Помилка
+// triangle(0, "leg", 10, "leg"); // Помилка
+window.triangle = triangle;
 export {};
 //# sourceMappingURL=index.js.map
