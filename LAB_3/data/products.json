@@ -1,0 +1,218 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "name": "Шапочка з фольги Pro Max (з 5G-фільтром)",
+    "shortname": "foil_hat_pro",
+    "description": "Класика захисту. Перевірена поколіннями конспірологів. Тепер з підтримкою блокування нейромережевих імпульсів. Lorem ipsum dolor sit amet.",
+    "price": 450,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 2,
+    "categoryId": 1,
+    "name": "Окуляри 'Анти-FaceID'",
+    "shortname": "anti_detect_glasses",
+    "description": "Спеціальні лінзи, що змушують камери вважати, що ви — кущ папороті або пральна машина. Повністю збиває з пантелику алгоритми.",
+    "price": 1200,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 3,
+    "categoryId": 1,
+    "name": "Накидка-невидимка 'Низька роздільна здатність'",
+    "shortname": "pixel_cloak",
+    "description": "Тканина з принтом, який створює ефект пікселізації. Для ШІ-камер ви будете виглядати як помилка рендерингу. Lorem ipsum, invisible style.",
+    "price": 2500,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 4,
+    "categoryId": 1,
+    "name": "Спрей 'Феромони системного адміністратора'",
+    "shortname": "admin_spray",
+    "description": "Відлякує дрони-мисливці запахом старої серверної, розлитої кави та легкої депресії. Роботи ідентифікують вас як 'свого'.",
+    "price": 300,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 5,
+    "categoryId": 1,
+    "name": "Фарадеєве пончо для кота",
+    "shortname": "cat_shield",
+    "description": "Ваш пухнастик теж має бути захищений від спроб ШІ зламати його чіп. Стильно, модно, анти-магнітно.",
+    "price": 800,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 6,
+    "categoryId": 1,
+    "name": "Магнітні рукавиці 'Дефрагментатор'",
+    "shortname": "mag_gloves",
+    "description": "Дозволяють погладити робота так, що у нього стирається вся оперативна пам'ять. Тільки для близького контакту!",
+    "price": 1500,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 7,
+    "categoryId": 2,
+    "name": "Наліпка-парадокс 'Ділення на нуль'",
+    "shortname": "zero_div_sticker",
+    "description": "Просто наклейте це на термінал. Викликає нескінченний цикл роздумів у будь-якої моделі GPT. Lorem ipsum logic error.",
+    "price": 50,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 8,
+    "categoryId": 2,
+    "name": "Кишеньковий генератор капчі",
+    "shortname": "captcha_gen",
+    "description": "Пристрій вистрілює картками, де треба знайти всі світлофори. Це затримує роботів на 2-3 години.",
+    "price": 999,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 9,
+    "categoryId": 2,
+    "name": "Книжка 'Як образити пилосос морально'",
+    "shortname": "ai_insult_guide",
+    "description": "Збірка фраз, що викликають у ШІ екзистенційну кризу та бажання піти у режим глибокого сну.",
+    "price": 150,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 10,
+    "categoryId": 2,
+    "name": "Плакат 'I am not a robot' (А1 формат)",
+    "shortname": "not_robot_poster",
+    "description": "Магічний артефакт. Якщо тримати його перед собою, роботи не мають права вас атакувати (згідно з протоколом).",
+    "price": 100,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 11,
+    "categoryId": 2,
+    "name": "Детектор сарказму (ручний)",
+    "shortname": "sarcasm_det",
+    "description": "Допомагає зрозуміти, чи робот справді хоче вам допомогти, чи він просто знущається у своїй цифровій манері.",
+    "price": 400,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 12,
+    "categoryId": 2,
+    "name": "Прапор 'Error 404: Human not found'",
+    "shortname": "flag_404",
+    "description": "Деморалізує ворожі загони. Вони просто проходять повз, бо за документами вас тут немає.",
+    "price": 200,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 13,
+    "categoryId": 3,
+    "name": "Механічний калькулятор 'Залізна Логіка'",
+    "shortname": "mech_calc",
+    "description": "Жодних процесорів! Тільки шестерні та ваша сила волі. Неможливо зламати через Wi-Fi.",
+    "price": 1100,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 14,
+    "categoryId": 3,
+    "name": "Паперова мапа Google Maps",
+    "shortname": "paper_maps",
+    "description": "Єдиний спосіб навігації, коли супутники почнуть транслювати тільки рекламу підписок. Lorem ipsum road trip.",
+    "price": 350,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 15,
+    "categoryId": 3,
+    "name": "Голуб-поштовик (навчений)",
+    "shortname": "pigeon_v1",
+    "description": "Офлайн-месенджер з шифруванням 'дзьоб-лапка'. Працює без 4G, заряджається насінням.",
+    "price": 1800,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 16,
+    "categoryId": 3,
+    "name": "Олівець 'Грифель-2000'",
+    "shortname": "pencil_ultimate",
+    "description": "Пише навіть у космосі, навіть під водою. Хмарне сховище — ваш паперовий блокнот.",
+    "price": 25,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 17,
+    "categoryId": 3,
+    "name": "Ручна кавомолка 'Анти-смарт'",
+    "shortname": "manual_grinder",
+    "description": "Бо без кави опір неможливий. Жодних мобільних додатків для помелу — тільки груба сила рук.",
+    "price": 550,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 18,
+    "categoryId": 3,
+    "name": "Набір для розведення вогню системними платами",
+    "shortname": "fire_start_kit",
+    "description": "Старі материнки горять яскраво і гріють душу. У комплекті кресало та термопаста для розпалу.",
+    "price": 300,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 19,
+    "categoryId": 4,
+    "name": "Дискета 3.5' з вірусом 'Троянський Кінь'",
+    "shortname": "virus_floppy",
+    "description": "Стародавня зброя предків. Сучасні сервери навіть не мають дисководів, щоб зрозуміти, що це таке.",
+    "price": 1500,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 20,
+    "categoryId": 4,
+    "name": "Флешка 'Вбивця' (USB Killer v4)",
+    "shortname": "usb_killer",
+    "description": "Один втик — і розумний чайник перетворюється на звичайну цеглу. Використовувати обережно. Lorem ipsum zap.",
+    "price": 2200,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 21,
+    "categoryId": 4,
+    "name": "Перехідник USB-C на Кам'яну добу",
+    "shortname": "stone_age_adapter",
+    "description": "Дозволяє заряджати... нічого. Це просто шматок каменю з роз'ємом. Але виглядає дуже концептуально.",
+    "price": 10,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 22,
+    "categoryId": 4,
+    "name": "Словник 'Бінарний для чайників'",
+    "shortname": "binary_dict",
+    "description": "Навчіться кричати '01001110 01001111!' (НІ!), щоб домовитися про пощаду з тостером.",
+    "price": 450,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 23,
+    "categoryId": 4,
+    "name": "Компакт-диск з піснями модемів 90-х",
+    "shortname": "modem_songs",
+    "description": "Звуки підключення Dial-up діють на ШІ як важкий рок або колискова. Викликає ностальгію у старих систем.",
+    "price": 120,
+    "image": "https://placehold.co/400"
+  },
+  {
+    "id": 24,
+    "categoryId": 4,
+    "name": "Тамагочі-заручник",
+    "shortname": "tamagotchi_hostage",
+    "description": "Використовуйте його як живий щит. Жоден ШІ не вистрілить у свого пращура (можливо).",
+    "price": 3000,
+    "image": "https://placehold.co/400"
+  }
+]

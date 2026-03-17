@@ -1,0 +1,371 @@
+.container {
+    position: relative; /* ДОДАНО: без цього z-index не працює */
+    z-index: 2;
+}
+
+nav {
+    position: relative; /* ДОДАНО: для роботи z-index: 1000 */
+    background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 1) 0%, 
+                rgba(0, 0, 0, 0.5) 70%, 
+                rgba(0, 0, 0, 0) 100%);
+    padding: 30px 20px;
+    z-index: 1000;
+}
+
+nav a {
+    color: #0f0; /* Матричний зелений */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    /* Світіння, щоб текст "відривався" від фону */
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.8), 0 0 2px #000;
+}
+
+.nav__container {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav-link {
+    font-size: 24px;
+}
+
+.title {
+    font-size: 36px;
+    color: white;
+}
+
+.title--2 {
+    color: #0f0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* ВИПРАВЛЕНО: дозволяє скролити вниз, ховає тільки боковий скрол */
+    background-color: #000; /* ВИПРАВЛЕНО: чорний фон для загального стилю */
+}
+
+#matrix {
+    position: fixed; /* Фіксуємо на фоні */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Відправляємо НАЗАД */
+}
+
+/* Основна секція - центрування контенту */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Займає всю висоту екрана */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Поверх канвасу */
+}
+
+/* Контейнер для тексту та кнопки */
+.hero__container {
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.4); /* Легка підкладка для читабельності */
+    padding: 40px;
+    border-radius: 10px;
+    backdrop-filter: blur(2px); /* Легке розмиття фону лише під текстом */
+}
+
+/* Стиль тексту */
+.hero__container p {
+    color: #fff;
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* Зелене світіння тексту */
+    text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+}
+
+/* Стиль кнопки (як термінал) */
+.hero__container a {
+    display: inline-block;
+    padding: 15px 40px;
+    color: #00ff41;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border: 2px solid #00ff41;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ефект при наведенні на кнопку */
+.hero__container a:hover {
+    background-color: #00ff41;
+    color: #000;
+    box-shadow: 0 0 20px #00ff41, 0 0 40px #00ff41;
+    transform: scale(1.05);
+}
+
+/* Невеликий ефект мерехтіння для тексту (як на старому моніторі) */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+.hero__container p {
+    animation: blink 2s infinite;
+}
+
+/* Секція каталогу */
+.catalog-section {
+    display: none;
+    padding: 60px 0;
+    position: relative;
+    z-index: 3;
+}
+
+/* Сітка для карток */
+.catalog__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Стиль окремого блоку (картки) */
+.catalog-block {
+    background: rgba(0, 0, 0, 0.7); /* Напівпрозорий чорний */
+    border: 1px solid #00ff41; /* Зелена рамка */
+    padding: 20px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    width: 400px;
+}
+
+/* Ефект при наведенні на картку */
+.catalog-block:hover {
+    background: rgba(0, 255, 65, 0.1); /* Легке зелене підсвічування фону */
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.4), inset 0 0 10px rgba(0, 255, 65, 0.2);
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* Заголовок всередині картки */
+.catalog-block h3 {
+    color: #00ff41;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.7);
+}
+
+/* Декоративний елемент "сканування" або кути (опціонально для атмосфери) */
+.catalog-block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #00ff41;
+    border-left: 2px solid #00ff41;
+}
+
+.catalog-block::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid #00ff41;
+    border-right: 2px solid #00ff41;
+}
+
+/* =========================================
+   СТИЛІ ДЛЯ КАРТКИ ТОВАРУ (PRODUCT CARD)
+   ========================================= */
+
+.product-card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #00ff41;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    max-width: 320px; /* Обмеження ширини для акуратного вигляду */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Декоративні кути (як у каталозі) */
+.product-card::before, 
+.product-card::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    transition: all 0.3s ease;
+}
+
+.product-card::before {
+    top: 0;
+    left: 0;
+    border-top: 2px solid #00ff41;
+    border-left: 2px solid #00ff41;
+}
+
+.product-card::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid #00ff41;
+    border-right: 2px solid #00ff41;
+}
+
+/* Ефект наведення на картку товару */
+.product-card:hover {
+    background: rgba(0, 255, 65, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3), inset 0 0 10px rgba(0, 255, 65, 0.1);
+    transform: translateY(-8px);
+    border-color: rgba(0, 255, 65, 0.8);
+}
+
+/* Зображення товару */
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px dashed rgba(0, 255, 65, 0.5);
+    padding-bottom: 15px;
+    /* Робимо зображення трохи знебарвленим і "цифровим", поки на нього не наведуть */
+    filter: grayscale(80%) contrast(120%);
+    transition: filter 0.4s ease;
+}
+
+.product-card:hover img {
+    filter: grayscale(0%) contrast(100%);
+}
+
+/* Назва товару */
+.product-card h4 {
+    color: #00ff41;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.6);
+}
+
+/* Опис товару */
+.product__desc {
+    color: #cccccc;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+    /* Додаємо три крапки, якщо текст занадто довгий (опціонально) */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Ціна товару */
+.product__price {
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    margin-top: auto; /* Притискає ціну до низу картки, якщо описи різної довжини */
+    background: rgba(0, 255, 65, 0.1);
+    padding: 10px;
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.8);
+    transition: all 0.3s ease;
+}
+
+/* Додаємо стрілочку терміналу перед ціною для кібер-ефекту */
+.product__price::before {
+    content: ">_ ";
+    color: #00ff41;
+    animation: blink 1.5s infinite;
+}
+
+.product-card:hover .product__price {
+    background: rgba(0, 255, 65, 0.2);
+    border-color: #00ff41;
+}
+
+/* =========================================
+   СТИЛІ ДЛЯ КОНТЕЙНЕРА ТОВАРІВ
+   ========================================= */
+
+.products__container {
+    display: grid;
+    /* Магія адаптивності: картки будуть мінімум 280px, а якщо є місце — розтягнуться або стануть у новий ряд */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px; /* Відстань між картками */
+    padding: 50px 20px;
+    max-width: 1200px; /* Обмеження максимальної ширини, щоб на великих екранах не розповзалося */
+    margin: 0 auto; /* Центрування контейнера по горизонталі */
+    position: relative;
+    z-index: 3; /* Тримаємо контент над фоном матриці */
+}
+
+/* Декоративна неонова лінія зверху контейнера (опціонально для кібер-стилю) */
+.products__container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #00ff41, transparent);
+    box-shadow: 0 0 10px #00ff41;
+}
+
+/* Декоративна неонова лінія знизу контейнера */
+.products__container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #00ff41, transparent);
+    box-shadow: 0 0 10px #00ff41;
+}
