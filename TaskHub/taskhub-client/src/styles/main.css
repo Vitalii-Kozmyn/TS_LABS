@@ -1,0 +1,210 @@
+:root {
+    /* 🔵 Бірюзова тема */
+    --turquoise-bg-color-start: #40E0D0;
+    --turquoise-bg-color-mid: #6FF5E3;
+    --turquoise-bg-color-end: #23AEA3;
+    --turquoise-color: #40E0D0;
+
+    /* 🟡 Жовта (соняшник) */
+    --sunflower-bg-color-start: #FFD54F;
+    --sunflower-bg-color-mid: #FFE082;
+    --sunflower-bg-color-end: #FBC02D;
+    --sunflower-color: #FFC107;
+
+    /* 🟣 Лавандова */
+    --lavender-bg-color-start: #B39DDB;
+    --lavender-bg-color-mid: #D1C4E9;
+    --lavender-bg-color-end: #9575CD;
+    --lavender-color: #7E57C2;
+
+    --color-red: #eb5757;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: black;
+}
+
+.page {
+    display: flex;      
+    height: 100vh;
+}
+
+.content {
+    flex: 1;            /* контент займає решту простору */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.prisma-bg {
+    background-image: linear-gradient(90deg, rgba(25, 25, 25, 0.1), rgba(255, 255, 255, 0.05)), url('data:image/svg+xml,...');
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.click-element {
+    cursor: pointer;
+}
+
+section {
+    margin-left: 106px;
+    margin-right: 56px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.color--turquoise {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: var(--turquoise-color);
+    border: 2px solid white;
+}
+
+.color--sunflower {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: var(--sunflower-color);
+    border: 2px solid white;
+}
+
+.color--lavender {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: var(--lavender-color);
+    border: 2px solid white;
+}
+
+.gradient-turquoise--linear {
+    background: linear-gradient(
+        180deg, 
+        var(--turquoise-bg-color-start) 0%, 
+        var(--turquoise-bg-color-mid) 50%, 
+        var(--turquoise-bg-color-end) 100%
+    );
+}
+
+.gradient-turquoise--horizontal {
+    background: linear-gradient(
+        to right, 
+        var(--turquoise-bg-color-start) 0%, 
+        var(--turquoise-bg-color-mid) 50%, 
+        var(--turquoise-bg-color-end) 100%
+    );
+
+    border-radius: 20px;
+}
+
+.turquoise-border {
+    border: 3px solid var(--turquoise-color);
+}
+
+.gradient-sunflower--linear {
+    background: linear-gradient(
+        180deg, 
+        var(--sunflower-bg-color-start) 0%, 
+        var(--sunflower-bg-color-mid) 50%, 
+        var(--sunflower-bg-color-end) 100%
+    );
+}
+
+.gradient-sunflower--horizontal {
+    background: linear-gradient(
+        to right, 
+        var(--sunflower-bg-color-start) 0%, 
+        var(--sunflower-bg-color-mid) 50%, 
+        var(--sunflower-bg-color-end) 100%
+    );
+
+    border-radius: 20px;
+}
+
+.sunflower-border {
+    border: 3px solid var(--sunflower-color);
+}
+
+.gradient-lavender--linear {
+    background: linear-gradient(
+        180deg, 
+        var(--lavender-bg-color-start) 0%, 
+        var(--lavender-bg-color-mid) 50%, 
+        var(--lavender-bg-color-end) 100%
+    );
+}
+
+.gradient-lavender--horizontal {
+    background: linear-gradient(
+        to right, 
+        var(--lavender-bg-color-start) 0%, 
+        var(--lavender-bg-color-mid) 50%, 
+        var(--lavender-bg-color-end) 100%
+    );
+
+    border-radius: 20px;
+}
+
+.lavender-border {
+    border: 3px solid var(--lavender-color);
+}
+
+.calendar__conteiner {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+}
+
+.calendar__container--1 {
+    flex: 2;
+}
+
+.calendar__container--2 {
+    flex: 1;
+    display: flex;
+    padding-top: 20px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .page {
+        flex-direction: column;
+    }
+
+    .content {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    section {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .calendar__conteiner {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .calendar__container--1,
+    .calendar__container--2 {
+        flex: none;
+    }
+}

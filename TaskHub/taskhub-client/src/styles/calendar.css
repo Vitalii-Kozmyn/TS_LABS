@@ -1,0 +1,115 @@
+/* Header (місяць + кнопки) */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar__block {
+    margin-top: 20px;
+    max-width: 900px;
+    border-radius: 20px;
+}
+
+.calendar-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.arrow-btn {
+    font-size: 18px;
+    padding: 8px;
+    width: 48px;
+    border: none;
+}
+
+
+/* Дні тижня */
+.calendar-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 10px;
+    text-align: center;
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+/* Сітка днів */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+/* Порожні клітинки */
+.calendar-blank {
+    opacity: 0.1;
+}
+
+/* День */
+.calendar-day {
+    padding: 10px 0;
+    border-radius: 12px;
+
+    text-align: center;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+/* Hover */
+.calendar-day:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Сьогодні */
+.calendar-day--today {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    font-weight: bold;
+    color: white;
+
+    box-shadow: 0 0 10px rgba(79, 172, 254, 0.7);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .calendar-header {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+
+    .calendar__block {
+        margin-top: 10px;
+        max-width: none;
+    }
+
+    .calendar-title {
+        font-size: 16px;
+    }
+
+    .arrow-btn {
+        font-size: 14px;
+        padding: 5px;
+        width: 35px;
+    }
+
+    .calendar-week {
+        margin-bottom: 5px;
+        font-size: 10px;
+    }
+
+    .calendar-grid {
+        gap: 4px;
+    }
+
+    .calendar-day {
+        padding: 6px 0;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+}

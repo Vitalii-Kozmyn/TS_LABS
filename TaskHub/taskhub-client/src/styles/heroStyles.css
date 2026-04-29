@@ -1,0 +1,162 @@
+.hero-nav__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-nav__container-options {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.btn {
+    font-size: 18px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.btn--len {
+    width: 80px;
+    height: 40px;
+    padding: 4px;
+}
+
+.btn--add {
+    padding: 20px;
+}
+
+.email__container {
+    padding: 2px 34px;
+    border-radius: 20px;
+}
+
+.email__container p{
+    font-size: 18px;
+}
+
+.task-plan__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.planner__container-list {
+    max-width: 380px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tasks__container, .tasks__container--2{
+    width: 100%;
+    height: 436px;
+    border-radius: 20px;
+    margin-bottom: 26px;
+}
+
+.tasks__container--2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-title {
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.tasks__container--blank {
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    border-radius: 20px;
+    
+    /* Додаємо магію скролу сюди */
+    overflow-y: auto;
+    scrollbar-width: none; /* Ховаємо скроллбар у Firefox */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    box-sizing: border-box; /* КРИТИЧНО ВАЖЛИВО: не дає паддінгам розтягнути блок! */
+}
+
+/* Ховаємо скроллбар у Chrome/Safari */
+.tasks__container--blank::-webkit-scrollbar {
+    display: none; 
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .task-plan__container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .planner__container-list {
+        max-width: none;
+    }
+
+    .tasks__container, .tasks__container--2 {
+        height: 300px;
+        margin-bottom: 20px;
+    }
+
+    .list-title {
+        font-size: 20px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .hero-nav__container {
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-nav__container-options {
+        gap: 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+
+    .btn--len {
+        width: 60px;
+        height: 30px;
+    }
+
+    .btn--add {
+        padding: 10px;
+    }
+
+    .email__container {
+        padding: 2px 15px;
+    }
+
+    .email__container p {
+        font-size: 14px;
+    }
+
+    .task-plan__container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .planner__container-list {
+        max-width: none;
+    }
+
+    .tasks__container, .tasks__container--2 {
+        height: 250px;
+        margin-bottom: 15px;
+    }
+
+    .list-title {
+        font-size: 18px;
+    }
+}

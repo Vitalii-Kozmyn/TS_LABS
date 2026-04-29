@@ -1,0 +1,155 @@
+.task-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.half-width {
+    flex: 1;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(255,255,255,0.1);
+    color: var(--color-text);
+    border: 1px solid black;
+    outline: none;
+}
+
+.task-form input:focus,
+.task-form textarea:focus,
+.task-form select:focus {
+    background-color: rgba(255,255,255,0.2);
+    border: 1px solid black;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-cancel {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--color-text);
+}
+
+.btn-submit {
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+/* === СТИЛІ ДЛЯ МОДАЛЬНОГО ВІКНА (ПЕРЕКРИТТЯ ЕКРАНА) === */
+
+/* Темний фон, який перекриває ВЕСЬ екран */
+.modal-window {
+    position: fixed; /* Відриваємо від звичайного потоку */
+    top: 0;
+    left: 0;
+    width: 100vw; /* На всю ширину екрана */
+    height: 100vh; /* На всю висоту екрана */
+    background-color: rgba(0, 0, 0, 0.75); /* Затемнення (чорний з 75% прозорості) */
+    display: flex;
+    justify-content: center; /* Центруємо по горизонталі */
+    align-items: center; /* Центруємо по вертикалі */
+    z-index: 9999; /* Ставимо поверх абсолютно ВСІХ інших елементів */
+    backdrop-filter: blur(4px); /* Робить задній фон трошки розмитим (дуже гарний ефект) */
+}
+
+/* Сама карточка форми (віконце) */
+.modal__content {
+    position: relative; /* Важливо для позиціонування хрестика всередині */
+    width: 90%;
+    max-width: 450px; /* Максимальна ширина форми */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* Гарна тінь для об'єму */
+    background-color: white;
+}
+
+/* Хрестик закриття форми */
+.close-btn--modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    line-height: 1;
+    color: #a8b2d1;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .modal__content {
+        width: 95%;
+        max-width: none;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .task-form {
+        gap: 10px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .half-width {
+        flex: none;
+    }
+
+    .task-form input,
+    .task-form textarea,
+    .task-form select {
+        padding: 8px;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-submit {
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    .btn-cancel {
+        align-self: flex-end;
+    }
+
+    .close-btn--modal {
+        font-size: 20px;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+.close-btn--modal:hover {
+    color: #c51e1e; /* Підсвічуємо хрестик при наведенні */
+}

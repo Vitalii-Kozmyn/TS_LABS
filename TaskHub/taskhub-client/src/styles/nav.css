@@ -1,0 +1,135 @@
+
+
+.nav {
+    position: relative;
+    height: 100vh;
+}
+
+.nav__container--bg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    margin-left: 10px;
+    margin-right: 16px;
+
+    border-radius: 40px;
+    width: 88px;
+    height: 684px;
+}
+
+.nav__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 24px;
+    height: 100%; 
+    box-sizing: border-box; 
+    border-radius: 40px;
+}
+
+.log-btn {
+    background-color: var(--color-red);
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.icon {
+    width: 42px;
+    height: 42px;
+}
+
+.theme-wave {
+    position: fixed;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 999999; /* Поверх усього */
+    pointer-events: none; /* Щоб хвиля не блокувала кліки */
+    animation: wave-expand 0.7s ease-out forwards;
+}
+
+@keyframes wave-expand {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(150); /* Розтягуємо на весь екран */
+        opacity: 0; /* Плавно ховаємо */
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .nav {
+        position: static;
+        height: auto;
+        width: 100%;
+    }
+
+    .nav__container--bg {
+        position: static;
+        top: auto;
+        transform: none;
+        margin: 0;
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+
+    .nav__container {
+        flex-direction: row;
+        padding: 10px;
+        height: auto;
+        justify-content: space-around;
+        border-radius: 0;
+    }
+
+    .nav__menu {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .log-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .color--turquoise,
+    .color--sunflower,
+    .color--lavender {
+        width: 20px;
+        height: 20px;
+    }
+}
