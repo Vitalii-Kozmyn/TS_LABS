@@ -31,7 +31,6 @@ function CalendarSection() {
             <HeroNav></HeroNav>
             <div className="calendar__conteiner">
                 <div className="calendar__container--1">
-                    {/* Передаємо завдання в Календар */}
                     <Calendar tasks={tasks}></Calendar>
                     
                     <div className="settings">
