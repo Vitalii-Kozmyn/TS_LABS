@@ -20,7 +20,6 @@ function CreateForm({ onClose, onTaskCreated }: CreateFormProps) {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            // Відправляємо на бекенд (якщо дата порожня, передаємо undefined)
             const newTask = await taskService.create({
                 title,
                 description,
@@ -29,8 +28,8 @@ function CreateForm({ onClose, onTaskCreated }: CreateFormProps) {
                 dueDate: dueDate ? dueDate : undefined
             });
             
-            onTaskCreated(newTask); // Оновлюємо стан у батьківському компоненті
-            onClose(); // Закриваємо модалку
+            onTaskCreated(newTask);
+            onClose();
         } catch (error) {
             console.error("Помилка при створенні завдання:", error);
             alert("Не вдалося створити завдання");
