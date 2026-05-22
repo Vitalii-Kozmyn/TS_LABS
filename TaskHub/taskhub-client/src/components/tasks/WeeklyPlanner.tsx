@@ -13,10 +13,13 @@ interface WeeklyPlannerProps {
 function WeeklyPlanner({ tasks, onTaskDrop, onTaskClick }: WeeklyPlannerProps) {
     const { theme } = useTheme();
     const [startOfWeek, setStartOfWeek] = useState<Date>(() => {
-        const initialDate = new Date(2026, 2, 18); 
+        const initialDate = new Date();
         const day = initialDate.getDay();
         const diff = initialDate.getDate() - day + (day === 0 ? -6 : 1); 
+        
         initialDate.setDate(diff);
+        initialDate.setHours(0, 0, 0, 0);
+        
         return initialDate;
     });
 
