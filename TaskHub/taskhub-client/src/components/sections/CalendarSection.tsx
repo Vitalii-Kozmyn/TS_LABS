@@ -47,7 +47,6 @@ function CalendarSection() {
                     </div>
                 </div>
                 <div className="calendar__container--2">
-                    {/* Передаємо завдання у Прогрес-бар */}
                     <TasksProgress tasks={tasks}></TasksProgress>
                 </div>
             </div>
