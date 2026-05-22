@@ -12,14 +12,12 @@ interface EditFormProps {
 }
 
 function EditForm({ task, onClose, onTaskUpdated, onTaskDeleted }: EditFormProps) {
-    // Ініціалізуємо стани даними з обраного завдання
     const [title, setTitle] = useState(task.title);
     const [description, setDescription] = useState(task.description || '');
     const [status, setStatus] = useState(task.status);
     const [priority, setPriority] = useState(task.priority);
     const { theme } = useTheme();
     
-    // Форматуємо дату для інпута (YYYY-MM-DD), якщо вона є
     const initialDate = task.dueDate ? new Date(task.dueDate).toISOString().split('T')[0] : '';
     const [dueDate, setDueDate] = useState(initialDate);
 
